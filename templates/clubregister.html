@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+      .bg{
+      background: url('../image/logo8.png') no-repeat;
+      width: 100%;
+        height: 100vh;
+      background-size: 100%;
+    }
+      .form-container{
+        position: absolute;
+        top: 15vh;
+        background:#fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px #000
+    }
+
+    @media only screen and (max-width: 678px){
+        .bg{
+                background-size: 300%;
+        }
+    }
+    body{
+          background: url("/static/wallpaper.jpg");
+          background-size: cover;
+    }
+  </style>
+</head>  
+<body>
+<section class="container-fluid bg">
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-3">
+            <form  class="form-container" action="{%url 'after_reg'%}" method="POST">
+                {%csrf_token%}
+                <div class="form-group">
+                  <h1>{{data}}</h1>
+                  <label for="clubname">Club Name</label>
+                  <input type="text" class="form-control" id="exampleInputusername" name="clubname"  required='true'>
+                </div>
+                <div class="form-group">
+                  <label for="clubhead">Club Head</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" name="clubhead"  required='true'>
+                </div>
+                <div class="form-group">
+                    <label for="pno">Phone no</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" name="pno"  required='true'>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Id</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" name="email"  required='true'>
+                </div>
+                <div class="form-group">
+                    <label for="des">Club Description</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" name="des"  required='true'>
+                  </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </form>
+
+
+         
+        </section>
+    </section>
+</section>    
+</body>
+</html>
